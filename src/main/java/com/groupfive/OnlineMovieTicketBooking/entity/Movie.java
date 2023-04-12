@@ -1,41 +1,47 @@
 package com.groupfive.OnlineMovieTicketBooking.entity;
 
-import java.sql.Date;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="Movie")
 public class Movie {
+
 	@Id
-	private Integer id;
-	private String name;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int movieId;
+	private String movieName;
+	private String poster;
+	private String actor;
+	private String actress;
+	private String director;
 	private String description;
-	private Date duration;
-	private String language;
+	private int year;
 	
-	public Movie() {}
-	public Movie (Integer id, String name, String description, Date duration, String language) {
-		super();
-		this.id=id;
-		this.name=name;
-		this.description=description;
-		this.duration=duration;
-		this.language=language;
+	public int getYear() {
+		return year;
 	}
-	public Integer getId() {
-		return id;
+	public void setYear(int year) {
+		this.year = year;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public String getActor() {
+		return actor;
 	}
-	public String getName() {
-		return name;
+	public void setActor(String actor) {
+		this.actor = actor;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public String getActress() {
+		return actress;
+	}
+	public void setActress(String actress) {
+		this.actress = actress;
+	}
+	public String getDirector() {
+		return director;
+	}
+	public void setDirector(String director) {
+		this.director = director;
 	}
 	public String getDescription() {
 		return description;
@@ -43,23 +49,24 @@ public class Movie {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Date getDuration() {
-		return duration;
+	public String getPoster() {
+		return poster;
 	}
-	public void setDuration(Date duration) {
-		this.duration = duration;
+	public void setPoster(String poster) {
+		this.poster = poster;
 	}
-	public String getLanguage() {
-		return language;
+	public int getMovieId() {
+		return movieId;
 	}
-	public void setLanguage(String language) {
-		this.language = language;
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
 	}
-	@Override
-	public String toString() {
-		return "Movie [id=" + id + ", name=" + name + ", description=" + description + ", duration=" + duration
-				+ ", language=" + language + "]";
+	public String getMovieName() {
+		return movieName;
+	}
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
 	}
 	
+	
 }
-
